@@ -143,7 +143,7 @@
                                     </div>
                                   </div>
                               <div class="col-md-4">
-                                <img src="<?php echo asset($article->image);?>" class="card-img" style="max-width: 250px;margin-top: 20px;margin-left: 20px;" alt="...">
+                                <img src="{{ $article->image }}" class="card-img" style="max-width: 250px;margin-top: 20px;margin-left: 20px;" alt="...">
                               </div>
                             </div>
                             <div class="row no-gutters">

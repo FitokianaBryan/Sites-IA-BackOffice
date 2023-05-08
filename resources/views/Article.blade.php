@@ -53,7 +53,7 @@
     <div class="header">
         <div class="title">{{ $article->titre }}</div>
         <div class="image">
-            <img src="{{ asset($article->image) }}">
+            <img src="{{ $article->image }}">
         </div>
     </div>
     <div class="author">Publié par : {{ $article->getAuteur()->nom }} {{ $article->getAuteur()->prenom }}</div>
