@@ -14,7 +14,10 @@ class AuteurController extends Controller
         $author = Auteur::where('email',$request->input('email'))->where('password',md5($request->input('password')));
         if($author->exists()) {
             session()->put('author',$author->first()->id);
-            return redirect()->route("Home");
+            return view('Home',[
+                'liste_article' => $list,
+                'links' => $list->links()
+            ]);
         }
         else return redirect()->back()->with('Error','Email ou mot de passe incorrect.');
     }
