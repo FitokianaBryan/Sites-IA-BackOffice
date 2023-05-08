@@ -179,10 +179,10 @@
                                     <tr> 
                                         <td>{{ $article->categorie }}</td>
                                         <td><a href="{{ url('/Details') }}/{{ $article->getSlugtitle() }}_{{ $article->id }}.html">{{ $article->titre }}</a></td>
-                                        @if($article->getEtat() == "publié")
-                                                    <td><p class="btn btn-outline-success disabled">{{ $article->getEtat() }}</p></td>
+                                        @if($article->getEtat() == 1)
+                                                    <td><p class="btn btn-outline-success disabled">Publié</p></td>
                                         @else 
-                                        <td><p class="btn btn-outline-danger disabled">{{ $article->getEtat() }}</p></td>
+                                        <td><p class="btn btn-outline-danger disabled">Supprimé</p></td>
                                         @endif
                                         <td>	
                                     </tr>

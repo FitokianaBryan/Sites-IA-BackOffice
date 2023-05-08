@@ -31,8 +31,7 @@ class Article extends Model
 
     public function getEtat() {
         $publication = Publication::firstWhere('idarticle',$this->attributes['id']);
-        if($publication->etat == 1) return "publié";
-        else return "supprimé";
+        return $publication->etat;
     }
 
     public function getLastNews() {

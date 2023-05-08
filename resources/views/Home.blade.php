@@ -141,14 +141,14 @@
                       <tr> 
                         <td>{{ $article->categorie }}</td>
                         <td><a href="{{ url('/Details') }}/{{ $article->getSlugtitle() }}_{{ $article->id }}.html">{{ $article->titre }}</a></td>
-                        @if($article->getEtat() == "publié")
-						              <td><p class="btn btn-outline-success disabled">{{ $article->getEtat() }}</p></td>
+                        @if($article->getEtat() == 1)
+						              <td><p class="btn btn-outline-success disabled">Publié</p></td>
                         @else 
-                          <td><p class="btn btn-outline-danger disabled">{{ $article->getEtat() }}</p></td>
+                          <td><p class="btn btn-outline-danger disabled">Supprimé</p></td>
                         @endif
                         <td>
 							<a class="btn btn-primary btn-icon btn-sm" href="{{url('/ExportPDF') }}/{{ $article->getSlugtitle() }}_{{ $article->id }}.html" role="button"><i data-feather="download" style="margin-top: 7px;"></i></a> 
-              @if($article->getEtat() == "publié")
+              @if($article->getEtat() == 1)
 							  <a class="btn btn-danger btn-icon btn-sm" href="{{ url('/DeleteArticle') }}/{{ $article->getSlugtitle() }}_{{ $article->id }}.html"><i data-feather="eye-off" style="margin-top: 7px;"></i></a>
               @else 
 							  <a class="btn btn-success btn-icon btn-sm" href="{{ url('/ReAddArticle') }}/{{ $article->getSlugtitle() }}_{{ $article->id }}.html"><i data-feather="eye" style="margin-top: 7px;"></i></i></a>
