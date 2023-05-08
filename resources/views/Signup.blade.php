@@ -35,9 +35,9 @@
                 </div>
                 <div class="col-md-8 pl-md-0">
                   <div class="auth-form-wrapper px-4 py-5">
-                    <a href="#" class="noble-ui-logo d-block mb-2">Mada<span>News</span></a>
+                    <a href="{{ url('/') }}" class="noble-ui-logo d-block mb-2">Mada<span>News</span></a>
                     <h5 class="text-muted font-weight-normal mb-4">Créer un compte gratuit.</h5>
-                    <form class="forms-sample" action="{{ url('/Signup') }}" method="POST">
+                    <form class="forms-sample" action="/Signup" method="POST">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">

@@ -128,7 +128,7 @@
 						<div class="card">
 							<div class="card-body">
 								<h4 class="card-title text-muted">Ajouter un article</h4>
-								<form action="{{ url('/addArticle') }}" method="POST" class="forms-sample" enctype="multipart/form-data">
+								<form action="/addArticle" method="POST" class="forms-sample" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="row">
                                       @if(!empty($categorie))

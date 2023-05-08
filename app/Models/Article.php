@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
+use Illuminate\Http\Request;
 
 
 use App\Models\Auteur;
@@ -22,7 +24,9 @@ class Article extends Model
     }
 
     public function getPublication() {
-        return Publication::firstWhere('idarticle',$this->attributes['id']);
+        $publication = Publication::firstWhere('idarticle',$this->attributes['id']);
+        if($publication) return $publication;
+        else return new Publication();
     }
 
     public function getEtat() {

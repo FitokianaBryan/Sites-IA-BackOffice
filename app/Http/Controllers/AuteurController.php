@@ -20,7 +20,7 @@ class AuteurController extends Controller
     }
 
     public function Logout() {
-        app('session')->forget('author');
+        session()->flush();
         return view('index');
     }
     public function Signup(Request $request) {

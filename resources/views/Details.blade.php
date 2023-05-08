@@ -131,7 +131,7 @@
                             <div class="row no-gutters">
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                      <a href="{{ url('/ToUpdateArticle') }}/{{ $article->id }}" class="btn btn-primary btn-sm" style="margin-bottom: 6px;">Modifier cet article</a>
+                                      <a href="{{ url('/ToUpdateArticle') }}/{{ $article->getSlugtitle() }}_{{ $article->id }}.html" class="btn btn-primary btn-sm" style="margin-bottom: 6px;">Modifier cet article</a>
 
                                       <!-- <h6 class="card-subtitle mb-2 text-muted">Enquete</h6> -->
                                       <h5 class="card-title">{{ $article->titre }}</h5>

@@ -128,7 +128,7 @@
 						<div class="card">
 							<div class="card-body">
 								<h4 class="card-title text-muted">Modifer cet article</h4>
-								<form action="{{ url('/UpdateArticle') }}" method="POST" class="forms-sample" enctype="multipart/form-data">
+								<form action="/UpdateArticle" method="POST" class="forms-sample" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="id" value="{{ $article->id }}">
                                     <div class="row">

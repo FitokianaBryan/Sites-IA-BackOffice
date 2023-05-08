@@ -36,15 +36,15 @@
                   <div class="auth-form-wrapper px-4 py-5">
                     <a href="/" class="noble-ui-logo d-block mb-2">Mada<span>News</span></a>
                     <h5 class="text-muted font-weight-normal mb-4">Bonjour administrateur! Connectez-vous à votre compte.</h5>
-                    <form class="forms-sample" action="{{ url('/Signin') }}" method="POST">
+                    <form class="forms-sample" action="/Signin" method="POST">
                         {{ csrf_field() }}
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value="john.smith@gmail.com">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Mot de passe</label>
-                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" autocomplete="current-password" placeholder="Mot de passe">
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" autocomplete="current-password" placeholder="Mot de passe" value="john1234">
                       </div>
 						<a href="{{ url('/ForgetPass') }}" class="d-block mt-3 text-muted">Mot de passe oublié?</a>
                       <div class="mt-3">

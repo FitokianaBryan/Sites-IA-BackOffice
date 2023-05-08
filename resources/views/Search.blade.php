@@ -128,7 +128,7 @@
 						<div class="card">
 							<div class="card-body">
 								<h4 class="card-title text-muted">Rechercher un article</h4>
-								<form action="{{ url('/Search') }}" method="POST" class="forms-sample">
+								<form action="/Search" method="POST" class="forms-sample">
                                     {{ csrf_field() }}
 									<div class="form-group">
 										<label for="exampleInputUsername1">Catégorie</label>
@@ -178,7 +178,7 @@
                                     @foreach($liste_article as $article)
                                     <tr> 
                                         <td>{{ $article->categorie }}</td>
-                                        <td><a href="{{ url('/Details') }}/{{ $article->id }}">{{ $article->titre }}</a></td>
+                                        <td><a href="{{ url('/Details') }}/{{ $article->getSlugtitle() }}_{{ $article->id }}.html">{{ $article->titre }}</a></td>
                                         @if($article->getEtat() == "publié")
                                                     <td><p class="btn btn-outline-success disabled">{{ $article->getEtat() }}</p></td>
                                         @else 
@@ -190,6 +190,8 @@
                                 </tbody>
                                 </table>
                             </div>
+                            <br>
+                            {!! $links !!}
 						</div>
 					</div>
 				</div>
