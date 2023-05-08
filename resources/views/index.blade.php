@@ -36,7 +36,7 @@
                   <div class="auth-form-wrapper px-4 py-5">
                     <a href="/" class="noble-ui-logo d-block mb-2">Mada<span>News</span></a>
                     <h5 class="text-muted font-weight-normal mb-4">Bonjour administrateur! Connectez-vous à votre compte.</h5>
-                    <form class="forms-sample" action="/Signin" method="POST">
+                    <form class="forms-sample" action="{{ url('/Signin') }}" method="POST">
                         {{ csrf_field() }}
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
