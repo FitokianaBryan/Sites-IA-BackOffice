@@ -6,19 +6,19 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Modification d'article</title>
 	<!-- core:css -->
-	<link rel="stylesheet" href="<?php echo asset('assets/vendors/core/core.css');?>">
+	<link rel="stylesheet" href="assets/vendors/core/core.css">
 	<!-- endinject -->
   <!-- plugin css for this page -->
-  <link rel="stylesheet" href="<?php echo asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css');?>">
+  <link rel="stylesheet" href="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
 	<!-- end plugin css for this page -->
 	<!-- inject:css -->
-	<link rel="stylesheet" href="<?php echo asset('assets/fonts/feather-font/css/iconfont.css');?>">
-	<link rel="stylesheet" href="<?php echo asset('assets/vendors/flag-icon-css/css/flag-icon.min.css');?>">
+	<link rel="stylesheet" href="assets/fonts/feather-font/css/iconfont.css">
+	<link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
 	<!-- endinject -->
   <!-- Layout styles -->  
-	<link rel="stylesheet" href="<?php echo asset('assets/css/demo_1/style.css');?>">
+	<link rel="stylesheet" href="assets/css/demo_1/style.css">
   <!-- End layout styles -->
-  <link rel="shortcut icon" href="<?php echo asset('assets/images/favicon.png');?>" />
+  <link rel="shortcut icon" href="assets/images/favicon.png" />
 </head>
 <body>
 	<div class="main-wrapper">
@@ -199,20 +199,20 @@
 	</div>
 
 	<!-- core:js -->
-	<script src="<?php echo asset('assets/vendors/core/core.js');?>"></script>
+	<script src="assets/vendors/core/core.js"></script>
 	<!-- endinject -->
   <!-- plugin js for this page -->
-  <script src="<?php echo asset('assets/vendors/datatables.net/jquery.dataTables.js');?>"></script>
-  <script src="<?php echo asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js');?>"></script>
+  <script src="assets/vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
 	<!-- end plugin js for this page -->
 	<!-- inject:js -->
-	<script src="<?php echo asset('assets/vendors/feather-icons/feather.min.js');?>"></script>
-	<script src="<?php echo asset('assets/js/template.js');?>"></script>
+	<script src="assets/vendors/feather-icons/feather.min.js"></script>
+	<script src="assets/js/template.js"></script>
 	<!-- endinject -->
   <!-- custom js for this page -->
-  <script src="<?php echo asset('assets/js/data-table.js');?>"></script>
-    <script src="<?php echo asset('assets/js/file-upload.js');?>"></script>
-    <script src="<?php echo asset('assets/ckeditor/ckeditor.js');?>"></script>
+  <script src="assets/js/data-table.js"></script>
+    <script src="assets/js/file-upload.js"></script>
+    <script src="assets/ckeditor/ckeditor.js"></script>
   <script>
     function toggle() {
         const select = document.getElementById('select-categorie');
@@ -235,59 +235,3 @@
 	<!-- end custom js for this page -->
 </body>
 </html>
-<!-- 
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modification d'article</title>
-</head>
-<body>
-    <p><a href="{{ url('/Home') }}">Accueil</a> - <a href="{{ url('/ToAddArticle') }}">Ajouter un article</a> <a href="{{ url('/Logout') }}">Déconnexion</a></p>
-    <h1>Modifier cet article</h1>
-    <form action="{{ url('/UpdateArticle') }}" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="{{ $article->id }}">
-        {{ csrf_field() }}
-        Catégorie : <select name="categorie" id="select-categorie">
-            <option value="{{ $article->categorie }}">{{ $article->categorie }}</option>
-            @foreach($categorie as $categories)
-                <option value="{{ $categories }}">{{ $categories}}</option>
-            @endforeach
-            <option value="another">Autre...</option>
-        </select> <input type="hidden" name="none" id="input-categorie"><br>
-        Titre : <input type="text" name="titre" placeholder="Titre" value="{{ $article->titre }}"><br>
-        <input type="hidden" name="image" value="{{ $article->image }}">
-        Image : <input type="file" name="other_image"><br>
-        Resume : <textarea name="resume">{{ $article->resume }}</textarea><br>
-        Contenu : <textarea name="contenu">{{ $article->contenu }}</textarea><br>
-        <button type="submit">Enregistrer</button>
-    </form>
-    @if(session()->has('success'))
-        <p>{{ session('success') }}</p>
-    @endif
-</body>
-<script>
-    function toggle() {
-        const select = document.getElementById('select-categorie');
-        const input = document.getElementById('input-categorie');
-        if(select.value == "another") {
-            input.type = "text";
-            input.name = "categorie";
-            input.placeholder = "Catégorie";
-            select.name = "none";
-        }
-        else {
-            input.type = "hidden";
-            input.name = "none";
-            select.name = "categorie";
-        }
-    }
-    document.getElementById('select-categorie').addEventListener("change",toggle);
-</script>
-</html> -->

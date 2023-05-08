@@ -6,19 +6,19 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Accueil</title>
 	<!-- core:css -->
-	<link rel="stylesheet" href="<?php echo asset('assets/vendors/core/core.css');?>">
+	<link rel="stylesheet" href="assets/vendors/core/core.css">
 	<!-- endinject -->
   <!-- plugin css for this page -->
-  <link rel="stylesheet" href="<?php echo asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css');?>">
+  <link rel="stylesheet" href="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
 	<!-- end plugin css for this page -->
 	<!-- inject:css -->
-	<link rel="stylesheet" href="<?php echo asset('assets/fonts/feather-font/css/iconfont.css');?>">
-	<link rel="stylesheet" href="<?php echo asset('assets/vendors/flag-icon-css/css/flag-icon.min.css');?>">
+	<link rel="stylesheet" href="assets/fonts/feather-font/css/iconfont.css">
+	<link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
 	<!-- endinject -->
   <!-- Layout styles -->  
-	<link rel="stylesheet" href="<?php echo asset('assets/css/demo_1/style.css');?>">
+	<link rel="stylesheet" href="assets/css/demo_1/style.css">
   <!-- End layout styles -->
-  <link rel="shortcut icon" href="<?php echo asset('assets/images/favicon.png');?>" />
+  <link rel="shortcut icon" href="assets/images/favicon.png" />
 </head>
 <body>
 	<div class="main-wrapper">
@@ -179,52 +179,18 @@
 	</div>
 
 	<!-- core:js -->
-	<script src="<?php echo asset('assets/vendors/core/core.js');?>"></script>
+	<script src="assets/vendors/core/core.js"></script>
 	<!-- endinject -->
   <!-- plugin js for this page -->
-  <script src="<?php echo asset('assets/vendors/datatables.net/jquery.dataTables.js');?>"></script>
-  <script src="<?php echo asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js');?>"></script>
+  <script src="assets/vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
 	<!-- end plugin js for this page -->
 	<!-- inject:js -->
-	<script src="<?php echo asset('assets/vendors/feather-icons/feather.min.js');?>"></script>
-	<script src="<?php echo asset('assets/js/template.js');?>"></script>
+	<script src="assets/vendors/feather-icons/feather.min.js"></script>
+	<script src="assets/js/template.js"></script>
 	<!-- endinject -->
   <!-- custom js for this page -->
-  <script src="<?php echo asset('assets/js/data-table.js');?>"></script>
+  <script src="assets/js/data-table.js"></script>
 	<!-- end custom js for this page -->
 </body>
 </html>
-
-<!-- 
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
-</head>
-<body>
-    <p><a href="{{ url('/') }}">Déconnnexion</a> - <a href="{{ url('/ToAddArticle') }}">Ajouter un article</a></p>
-    <h1>Liste des articles</h1>
-    <table>
-        <tr>
-            <th>Titre</th>
-            <th>Auteur</th>
-        </tr>
-
-        @foreach($liste_article as $article)
-            <tr>
-                <td>{{ $article->titre }}</td>
-                <td>{{ $article->getAuteur()->nom }} {{ $article->getAuteur()->prenom }}</td>
-                <td><a href="{{ url('/Details') }}/{{ $article->id }}">Details</a> - <a href="{{ url('/ToUpdateArticle') }}/{{ $article->id }}">Modifier</a></td>
-            </tr>
-        @endforeach
-    </table>
-    {!! $links !!}
-</body>
-</html> -->

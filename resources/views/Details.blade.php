@@ -6,19 +6,19 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Détails</title>
 	<!-- core:css -->
-	<link rel="stylesheet" href="<?php echo asset('assets/vendors/core/core.css');?>">
+	<link rel="stylesheet" href="assets/vendors/core/core.css">
 	<!-- endinject -->
   <!-- plugin css for this page -->
-  <link rel="stylesheet" href="<?php echo asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css');?>">
+  <link rel="stylesheet" href="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
 	<!-- end plugin css for this page -->
 	<!-- inject:css -->
-	<link rel="stylesheet" href="<?php echo asset('assets/fonts/feather-font/css/iconfont.css');?>">
-	<link rel="stylesheet" href="<?php echo asset('assets/vendors/flag-icon-css/css/flag-icon.min.css');?>">
+	<link rel="stylesheet" href="assets/fonts/feather-font/css/iconfont.css">
+	<link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
 	<!-- endinject -->
   <!-- Layout styles -->  
-	<link rel="stylesheet" href="<?php echo asset('assets/css/demo_1/style.css');?>">
+	<link rel="stylesheet" href="assets/css/demo_1/style.css">
   <!-- End layout styles -->
-  <link rel="shortcut icon" href="<?php echo asset('assets/images/favicon.png');?>" />
+  <link rel="shortcut icon" href="assets/images/favicon.png" />
 </head>
 <body>
 	<div class="main-wrapper">
@@ -169,20 +169,20 @@
 	</div>
 
 	<!-- core:js -->
-	<script src="<?php echo asset('assets/vendors/core/core.js');?>"></script>
+	<script src="assets/vendors/core/core.js"></script>
 	<!-- endinject -->
   <!-- plugin js for this page -->
-  <script src="<?php echo asset('assets/vendors/datatables.net/jquery.dataTables.js');?>"></script>
-  <script src="<?php echo asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js');?>"></script>
+  <script src="assets/vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
 	<!-- end plugin js for this page -->
 	<!-- inject:js -->
-	<script src="<?php echo asset('assets/vendors/feather-icons/feather.min.js');?>"></script>
-	<script src="<?php echo asset('assets/js/template.js');?>"></script>
+	<script src="assets/vendors/feather-icons/feather.min.js"></script>
+	<script src="assets/js/template.js"></script>
 	<!-- endinject -->
   <!-- custom js for this page -->
-  <script src="<?php echo asset('assets/js/data-table.js');?>"></script>
-    <script src="<?php echo asset('assets/js/file-upload.js');?>"></script>
-    <script src="<?php echo asset('assets/ckeditor/ckeditor.js');?>"></script>
+  <script src="assets/js/data-table.js"></script>
+    <script src="assets/js/file-upload.js"></script>
+    <script src="assets/ckeditor/ckeditor.js"></script>
   <script>
     function toggle() {
         const select = document.getElementById('select-categorie');
@@ -205,25 +205,3 @@
 	<!-- end custom js for this page -->
 </body>
 </html>
-
-<!-- 
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Details</title>
-</head>
-<body>
-    <p><a href="{{ url('/Home') }}">Accueil</a></p> - <a href="{{ url('/ToAddArticle') }}">Ajouter un nouvel article</a>
-    <h1>{{ $article->titre}}</h1>
-    <p>{{ $article->getAuteur()->nom }} {{ $article->getAuteur()->prenom }}</p>
-    <p><img src="<?php echo asset($article->image);?>" style="max-width: 150px;"></p>
-    <p>Résumé : {{ $article->resume }}</p>
-    <p>{{ $article->contenu }}</p>
-    <p><a href="{{ url('/ToUpdateArticle') }}/{{ $article->id }}">Modifier l'article</a></p>
-</body>
-</html> -->
