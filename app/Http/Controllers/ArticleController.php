@@ -39,7 +39,9 @@ class ArticleController extends Controller
         if ($request->filled('publish_at_2')) {
             $query->where('publication.publish_at', '<=', $request->input('publish_at_2'));
         }
-        $articles = $query->simplePaginate(6);
+        $articles = $query
+        ->select('article.*')
+        ->simplePaginate(6);
         return view('Search',[
             'liste_article' => $articles,
             'links' => $articles->links()
