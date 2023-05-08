@@ -30,8 +30,13 @@ class Article extends Model
     }
 
     public function getEtat() {
-        $publication = Publication::firstWhere('idarticle',$this->attributes['id']);
-        return $publication->etat;
+        $publication = Publication::firstWhere('idarticle', $this->attributes['id']);
+        if ($publication) {
+            return $publication->etat;
+        } else {
+            return null;
+        }
+    
     }
 
     public function getLastNews() {
