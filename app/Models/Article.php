@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+
 
 use App\Models\Auteur;
 use App\Models\Publication;
@@ -32,6 +34,10 @@ class Article extends Model
     public function getLastNews() {
         $publication = Publication::latest('published_at')->first();
         return self::find($publication->idarticle);
+    }
+
+    public function getSlugtitle() {
+        return Str::slug($this->attributes['titre']);
     }
 
 }

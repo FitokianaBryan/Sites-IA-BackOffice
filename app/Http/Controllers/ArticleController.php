@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Dompdf\Dompdf;
+use Illuminate\Support\Str;
+
 
 use App\Models\Article;
 use App\Models\Publication;
@@ -41,8 +43,15 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function getDetails($idarticle) {
-        return view('Details',['article' => Article::find($idarticle)]);
+    public function getDetails($slug) {
+        $titre = basename($slug,'.html');
+        $articles = Article::all();
+        foreach($articles as $article) {
+            if($article->getSlugtitle() == $titre) {
+                return view('Details',['article' => $article]);
+            }
+            else abort(404);
+        }
     }
 
     /*-- article --*/
@@ -96,11 +105,19 @@ class ArticleController extends Controller
         return redirect()->back()->with('success','Article enregistré.');
     }
 
-    public function DeleteArticle($idarticle) {
-        $publication = Publication::firstWhere('idarticle',$idarticle);
-        $publication->etat = 11;
-        $publication->save();
-        return redirect()->back()->with('success','Article Supprimé.');
+    public function DeleteArticle($slug) {
+        $titre = basename($slug,'.html');
+        $articles = Article::all();
+        foreach($articles as $article) {
+            if($article->getSlugtitle() == $titre) {
+                $publication = Publication::firstWhere('idarticle',$idarticle);
+                $publication->etat = 11;
+                $publication->save();
+                return redirect()->back()->with('success','Article Supprimé.');
+            }
+            else abort(404);
+        }
+
     }
 
     public function ToAddArticle() {
@@ -108,30 +125,50 @@ class ArticleController extends Controller
         return view('CreateArticle',['categorie' => $categorie]);
     }
 
-    public function ReAddArticle($idarticle) {
-        $publication = Publication::firstWhere('idarticle',$idarticle);
-        $publication->etat = 1;
-        $publication->save();
-        return redirect()->back()->with('success','l\'article '.$idarticle.'a été republié.');
+    public function ReAddArticle($slug) {
+        $titre = basename($slug,'.html');
+        $articles = Article::all();
+        foreach($articles as $article) {
+            if($article->getSlugtitle() == $titre) {
+                $publication = Publication::firstWhere('idarticle',$article->id);
+                $publication->etat = 1;
+                $publication->save();
+                return redirect()->back()->with('success','l\'article a été republié.');
+            }
+            else abort(404);
+        }
+
     }
 
-    public function ToUpdateArticle($idarticle) {
-        $article = Article::find($idarticle);
-        $categorie = Article::where('categorie','!=',$article->categorie)->distinct()->pluck('categorie')->toArray();
-        return view('UpdateArticle',[
-            'categorie' => $categorie,
-            'article' => $article
-        ]);
+    public function ToUpdateArticle($slug) {
+        $titre = basename($slug,'.html');
+        $articles = Article::all();
+        foreach($articles as $article) {
+            if($article->getSlugtitle() == $titre) {
+                $categorie = Article::where('categorie','!=',$article->categorie)->distinct()->pluck('categorie')->toArray();
+                return view('UpdateArticle',[
+                    'categorie' => $categorie,
+                    'article' => $article
+                ]);
+            }
+            else abort(404);
+        }
     }
 
-    public function ExportPDF($idarticle) {
-        $article = Article::find($idarticle);
-        $dompdf = new Dompdf();
-        $html = view('Article', compact('article'))->render();
-        $dompdf->loadHtml($html);
-        $dompdf->render();
-        $pdfname = $article->getPublication()->publish_at." - ".$article->titre.".pdf";
-        return $dompdf->stream($pdfname);
+    public function ExportPDF($slug) {
+        $titre = basename($slug,'.html');
+        $articles = Article::all();
+        foreach($articles as $article) {
+            if($article->getSlugtitle() == $titre) {
+                $dompdf = new Dompdf();
+                $html = view('Article', compact('article'))->render();
+                $dompdf->loadHtml($html);
+                $dompdf->render();
+                $pdfname = $article->getPublication()->publish_at." - ".$article->titre.".pdf";
+                return $dompdf->stream($pdfname);
+            }
+            else abort(404);
+        }
     }
 }
 

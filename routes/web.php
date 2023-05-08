@@ -29,11 +29,11 @@ Route::get('/Logout',AuteurController::class . '@Logout');
 
 Route::get('/ToSearch',function() { return view('Search',["liste_article" => ""]); });
 Route::post('/Search',ArticleController::class . '@Search');
-Route::get('/Details/{idarticle}',ArticleController::class . '@getDetails');
+Route::get('/Details/{slug}',ArticleController::class . '@getDetails');
 Route::get('/ToAddArticle',ArticleController::class . '@ToAddArticle');
 Route::post('/addArticle',ArticleController::class . '@CreateArticle');
-Route::get('/ToUpdateArticle/{idarticle}',ArticleController::class . '@ToUpdateArticle');
+Route::get('/ToUpdateArticle/{slug}',ArticleController::class . '@ToUpdateArticle');
 Route::post('/UpdateArticle',ArticleController::class . '@UpdateArticle');
-Route::get('/DeleteArticle/{idarticle}',ArticleController::class . '@DeleteArticle');
-Route::get('/ReAddArticle/{idarticle}',ArticleController::class . '@ReAddArticle');
-Route::get('/ExportPDF/{idarticle}',ArticleController::class . '@ExportPDF');
+Route::get('/DeleteArticle/{slug}',ArticleController::class . '@DeleteArticle');
+Route::get('/ReAddArticle/{slug}',ArticleController::class . '@ReAddArticle');
+Route::get('/ExportPDF/{slug}',ArticleController::class . '@ExportPDF');
